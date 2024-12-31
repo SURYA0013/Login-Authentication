@@ -1,0 +1,65 @@
+.l-back{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: oklch(0.21 0.034 264.665);
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid  ;
+    padding: 25px 35px;
+    background-color: white;
+    border-radius: 10px;
+}
+.login-form a{
+    text-decoration: none;
+}
+.btn button:hover{
+    background-color: #d5d5d5;
+    border-radius: 4px;
+    border-bottom: #808080;
+}
+
+.sbmt-btn{
+    padding: 10px;
+    background-color: #077eff;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.form-input{
+    padding:8px 10px ;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    transition: 1s;
+}
+.form-input:hover{
+    box-shadow: 0 0 5pt 0.5pt #077eff;
+}
+.form-input:focus {
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+    outline-width: 0px;
+  }
+.login-term{
+    display: flex;
+    font-size: 12px;
+    color: #808080;
+    gap: 5px;
+}
+.login-toggle{
+    font-size: 13px;
+    font-weight: 400;
+    color: #808080;
+    margin-bottom: 2px;
+}
+.login-toggle>span{
+    font-weight: 500;
+    color: #077eff;
+    cursor: pointer;
+}
