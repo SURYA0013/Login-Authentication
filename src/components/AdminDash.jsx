@@ -4,8 +4,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 const AdminDash = () => {
   const [userData, setUserData] = useState([]);
+  const[name,setName]=useState("")
   useEffect(() => {
     dataFetch();
+    fetchAdminInfo();
   }, []);
   const dataFetch = async () => {
     try {
@@ -18,13 +20,30 @@ const AdminDash = () => {
       console.error("Error fetching profiles:", error);
     }
   };
+  const fetchAdminInfo = async () => {
+    const token=localStorage.getItem('authToken');      
+    console.log("mytoken-:"+token);
+    const url = "http://localhost:80/user/getuser";
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("User info fetched:", response.data);
+      setName(response.data.username);
+      console.log(name);
+    } catch (error) {
+      console.error("Error fetching user info with token:", error);
+    }
+  };
   return (
     <div className="admin">
       <div className="sidebar">
         <div className="profile">
           <h1>Admin Dashboard</h1>
           <img src="person.png" alt="" />
-          <p>Ester Howard</p>
+          <p>{name}</p>
         </div>
         <Link to>Profiles</Link>
         <a href="#">updates</a>
@@ -36,8 +55,8 @@ const AdminDash = () => {
       <div className="right">
         <div className="header">
           <div>
-            <h3 className="title">Welcome back, Ester!</h3>
-            <p>Ester Take a look at candidate profiles</p>
+            <h3 className="title">Welcome back, {name}!</h3>
+            <p>{name} Take a look at candidate profiles</p>
           </div>
           <div className="search">
             <input type="text" placeholder="search candidate..." />
@@ -55,8 +74,8 @@ const AdminDash = () => {
                <p>{user.phoneNumber}</p>
              </div>
              <div className="actions">
-               <button className="update">Update</button>
-               <button className="delete">Delete</button>
+               <button className="update" onClick={handelUpdate}>Update</button>
+               <button className="delete" onClick={handelDelete}>Delete</button>
              </div>
            </div>
           )
@@ -66,5 +85,4 @@ const AdminDash = () => {
     </div>
   );
 };
-
 export default AdminDash;

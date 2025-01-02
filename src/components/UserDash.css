@@ -1,0 +1,58 @@
+.skill-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    background-color: #f9f9f9;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-card h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 10px;
+    margin: 10px 0;
+  }
+  
+  .progress-bar .progress {
+    background-color: #4caf50;
+    height: 100%;
+  }
+  
+  .skill-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .buttons {
+    margin-top: 12px;
+  }
+  
+  .buttons .update-btn,
+  .buttons .delete-btn {
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttons .update-btn {
+    background-color: #008cba;
+    color: #fff;
+  }
+  
+  .buttons .delete-btn {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
