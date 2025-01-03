@@ -74,8 +74,8 @@ const AdminDash = () => {
                <p>{user.phoneNumber}</p>
              </div>
              <div className="actions">
-               <button className="update" onClick={handelUpdate}>Update</button>
-               <button className="delete" onClick={handelDelete}>Delete</button>
+               <button className="update" >Update</button>
+               <button className="delete">Delete</button>
              </div>
            </div>
           )
